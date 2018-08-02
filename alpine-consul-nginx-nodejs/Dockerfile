@@ -1,5 +1,4 @@
-FROM smebberson/alpine-consul-nginx:2.0.0
-MAINTAINER Scott Mebberson <scott@scottmebberson.com>
+FROM ppabc/dac:alpine-consul-nginx
 
 # Install Node.js, and the latest version of npm (and Python in case any npm modules require building)
 RUN apk add --update nodejs git python make && \
