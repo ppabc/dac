@@ -1,10 +1,9 @@
-FROM smebberson/alpine-consul-base:4.2.0
-MAINTAINER Scott Mebberson <scott@scottmebberson.com>
+FROM ppabc/dac:alpine-consul-base
 
 # Install nginx
 RUN echo "http://dl-4.alpinelinux.org/alpine/v3.3/main" >> /etc/apk/repositories && \
     apk upgrade --update --no-cache && \
-    apk add --update --no-cache nginx=1.8.1-r1 && \
+    apk add --update --no-cache nginx=1.12.2-r3 && \
     rm -rf /var/cache/apk/* && \
     chown -R nginx:www-data /usr/share/nginx && \
     ln -sf /dev/stdout /var/log/nginx/access.log && \
