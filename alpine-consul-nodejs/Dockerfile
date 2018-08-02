@@ -1,5 +1,4 @@
-FROM smebberson/alpine-consul-base:4.2.0
-MAINTAINER Scott Mebberson <scott@scottmebberson.com>
+FROM ppabc/dac:alpine-consul-base
 
 ENV NODE_VERSION=v6.11.0 NPM_VERSION=3
 
