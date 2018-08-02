@@ -2,9 +2,9 @@ FROM ppabc/dac:alpine-consul-base
 
 # Install nginx
 RUN apk upgrade --update --no-cache && \
-    apk add --update --no-cache nginx=1.12.2-r3 && \
+    apk add --update --no-cache nginx && \
     rm -rf /var/cache/apk/* && \
-    chown -R nginx:www-data /usr/share/nginx && \
+    #chown -R nginx:www-data /usr/share/nginx && \
     ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log && \
     addgroup consul-template nginx
