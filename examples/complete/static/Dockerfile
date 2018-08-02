@@ -1,5 +1,4 @@
-FROM smebberson/alpine-consul-nginx:local
-MAINTAINER Scott Mebberson <scott@scottmebberson.com>
+FROM ppabc/dac:alpine-consul-nginx
 
 # Add the files.
 ADD root /
