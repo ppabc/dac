@@ -1,7 +1,6 @@
-FROM smebberson/alpine-base:3.2.0
-MAINTAINER Scott Mebberson <scott@scottmebberson.com>
+FROM ppabc/dac:alpine-base
 
-ENV CONSUL_VERSION=0.8.5 \
+ENV CONSUL_VERSION=1.2.2 \
     CONSUL_DOMAIN=consul \
     CONSUL_DATA_DIR=/data/consul \
     CONSUL_CONFIG_DIR=/etc/consul/conf.d/bootstrap \
