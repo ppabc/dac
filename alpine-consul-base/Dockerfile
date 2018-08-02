@@ -1,7 +1,6 @@
-FROM smebberson/alpine-consul:3.2.0
-MAINTAINER Scott Mebberson <scott@scottmebberson.com>
+FROM ppabc/dac:alpine-consul
 
-ENV CONSUL_TEMPLATE_VERSION=0.19.0 \
+ENV CONSUL_TEMPLATE_VERSION=0.19.5 \
     CONSUL_DATA_DIR=/data/consul \
     CONSUL_CONFIG_DIR=/etc/consul/conf.d
 
