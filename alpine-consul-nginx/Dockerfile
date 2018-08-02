@@ -1,8 +1,7 @@
 FROM ppabc/dac:alpine-consul-base
 
 # Install nginx
-RUN echo "http://dl-4.alpinelinux.org/alpine/v3.3/main" >> /etc/apk/repositories && \
-    apk upgrade --update --no-cache && \
+RUN apk upgrade --update --no-cache && \
     apk add --update --no-cache nginx=1.12.2-r3 && \
     rm -rf /var/cache/apk/* && \
     chown -R nginx:www-data /usr/share/nginx && \
