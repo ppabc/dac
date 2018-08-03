@@ -2,11 +2,11 @@
     "service": {
         "name": "app",
         "tags": ["app","php7"],
-        "port": 9000,
+        "port": 9002,
         "check": {
             "id": "app",
-            "name": "app on port 9000",
-            "http": "http://localhost:9000/ping",
+            "name": "app on port 9002",
+            "http": "http://localhost:9002/ping",
             "interval": "10s",
             "timeout": "1s"
         }
