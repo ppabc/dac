@@ -5,7 +5,7 @@
         "check": {
             "id": "redis",
             "name": "redis",
-            "script": "redis-check",
+            "args":["sh","-c","redis-check"],
             "interval": "10s"
         }
     }
