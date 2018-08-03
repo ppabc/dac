@@ -10,7 +10,6 @@ RUN apk upgrade --update --no-cache && \
     curl -sLo /tmp/consul-template.zip https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip && \
     unzip -d /usr/sbin/ /tmp/consul-template.zip && \
     rm /tmp/consul-template.zip && \
-    apk del curl && \
     addgroup consul-template && \
     adduser -D -g "" -s /bin/sh -G consul-template consul-template && \
     addgroup s6 && \
