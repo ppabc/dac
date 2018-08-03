@@ -15,7 +15,6 @@ RUN apk upgrade --update --no-cache && \
     curl -sSLo /tmp/consul.zip https://releases.hashicorp.com/consul/{$CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip && \
     unzip -d /bin /tmp/consul.zip && \
     rm /tmp/consul.zip && \
-    apk del curl && \
     addgroup consul && \
     adduser -D -g "" -s /bin/sh -G consul consul && \
     mkdir -p /data/consul && \
