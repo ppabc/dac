@@ -1,4 +1,4 @@
-FROM ppabc/dac:alpine-consul-base
+FROM ppabc/dac:alpine-consul-base-test
 LABEL maintainer="aqzt.com (ppabc@qq.com)"
 
 ### Default Runtime Environment Variables
