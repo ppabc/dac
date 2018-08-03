@@ -1,11 +1,11 @@
-FROM smebberson/alpine-consul-base:4.2.0
-MAINTAINER Scott Mebberson <scott@scottmebberson.com>
+FROM ppabc/dac:alpine-consul-base
+
 
 ENV REDIS_VERSION=3.2.5-r0
 
 # Install redis.
 RUN apk upgrade --update --no-cache && \
-    apk add --update --no-cache redis=$REDIS_VERSION && \
+    apk add --update --no-cache redis && \
     rm -rf /var/cache/apk/* && \
     mkdir -p /data/redis && \
     chown -R redis:redis /data/redis && \
