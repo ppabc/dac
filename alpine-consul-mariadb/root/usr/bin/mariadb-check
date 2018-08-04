@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv sh
+
+echo "SELECT NOW()\G" | mysql -ucheck_mysql -p111111 -h127.0.0.1 mysql >> /var/log/check_mysql.log 2>&1 && exit 0
+
+exit 2
