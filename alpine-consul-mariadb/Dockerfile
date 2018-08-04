@@ -7,7 +7,8 @@ LABEL maintainer="aqzt.com (ppabc@qq.com)"
 
 		### Install Required Dependencies
     RUN export CPU=`cat /proc/cpuinfo | grep -c processor` ; \
-        
+        # Add testing repo
+        echo http://dl-4.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories ; \        
         
         # Install packages
         apk add --no-cache \
