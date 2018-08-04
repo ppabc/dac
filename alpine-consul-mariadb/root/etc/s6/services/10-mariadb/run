@@ -28,6 +28,8 @@ if [ -d /var/lib/mysql/mysql ]; then
 else
 
 	echo "** [mariadb] [i] MySQL data directory is not found, creating initial DB(s)..."
+        touch /var/log/check_mysql.log
+        chmod 777 /var/log/check_mysql.log
 	mkdir  -p /var/lib/mysql/mysql
 	chown -R mysql:mysql /var/lib/mysql
         chown -R mysql:mysql /run/mysqld
