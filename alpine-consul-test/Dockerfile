@@ -1,4 +1,4 @@
-FROM ppabc/dac:alpine-base-test
+FROM ppabc/dac:alpine-base-3.7
 
 ENV CONSUL_VERSION=1.2.2 \
     CONSUL_DOMAIN=consul \
