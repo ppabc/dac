@@ -1,4 +1,4 @@
-FROM ppabc/dac:alpine-consul-test
+FROM ppabc/dac:alpine-consul-3.7
 
 ENV CONSUL_TEMPLATE_VERSION=0.19.5 \
     CONSUL_DATA_DIR=/data/consul \
