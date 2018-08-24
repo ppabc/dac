@@ -8,6 +8,8 @@ if [ -d /data/mysql ]; then
   echo "[i] MySQL directory already present, skipping creation"
 else
   echo "[i] MySQL data directory not found, creating initial DBs"
+  touch /var/log/check_mysql.log
+  chmod 777 /var/log/check_mysql.log
   mkdir -p /data/mysql/ /data/mysql/data/ /data/mysql/logs/
   chown -R root:mysql /data/mysql/
   mysql_install_db --user=root --datadir=/data/mysql/data/ > /dev/null
@@ -31,9 +33,11 @@ else
 USE mysql;
 FLUSH PRIVILEGES;
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1' IDENTIFIED BY "$MYSQL_ROOT_PASSWORD" WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'check_mysql'@'127.0.0.1' IDENTIFIED BY "$MYSQL_ROOT_PASSWORD" WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
-UPDATE user SET password=PASSWORD("$MYSQL_ROOT_PASSWORD") WHERE user='root' AND host='localhost';
 UPDATE user SET password=PASSWORD("$MYSQL_ROOT_PASSWORD") WHERE user='root' AND host='127.0.0.1';
+UPDATE user SET password=PASSWORD("$MYSQL_ROOT_PASSWORD") WHERE user='check_mysql' AND host='127.0.0.1';
+UPDATE user SET password=PASSWORD("$MYSQL_ROOT_PASSWORD") WHERE user='root' AND host='localhost';
 EOF
 
   if [ "$MYSQL_DATABASE" != "" ]; then
