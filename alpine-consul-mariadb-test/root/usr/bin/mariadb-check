@@ -1,6 +1,5 @@
 #!/usr/bin/with-contenv sh
-touch /var/log/check_mysql.log
-chmod 777 /var/log/check_mysql.log
+
 
 RESULT=`echo "SELECT NOW()\G" | mysql -ucheck_mysql -p111111 -h127.0.0.1 mysql >> /var/log/check_mysql.log 2>&1 && echo ok`
 
